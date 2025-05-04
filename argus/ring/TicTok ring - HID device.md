@@ -1,5 +1,3 @@
-# Ring based control
-
 ## Use-Case: watching/listening to lectures/podcasts and taking notes
 
 - scroll up/down - to go forward/backward 30s in the video

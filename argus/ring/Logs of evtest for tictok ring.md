@@ -1,20 +1,22 @@
-# here are the logs from evtest for the ring
 
-It is kinda funky because it is simulating touch events:
+The events are kinda funky because it simulates swiping up/down events:
 
-- scroll up: touch, then report different positions from top to bottom every 0.03s, then release
-- scroll down: same but positions `ABS_Y` from bottom to top
-- button press - after scroll: touch, then report position to the center of the screen, then release
-- button press - after previous button press: touch, then release
-- volume buttons seem normal HID events
+| Physical action                            | HID Events                                                                                        |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| Scroll Wheel Up                            | `BTN_TOUCH`, then report different `ABS_Y` positions from top to bottom every 0.03s, then release |
+| Scroll Wheel Down                          | same as Up but positions `ABS_Y` from bottom to top                                               |
+| Button Press (after using Scroll Wheel)    | `BTN_TOUCH`, then report position to the center of the screen, then release                       |
+| Button Press (after previous button press) | `BTN_TOUCH`, then release                                                                         |
+| Volume Buttons                             | seem like normal `HID` events                                                                     |
+
 
 My algorithm so far:
-  - so far is using `BTN_TOUCH` to detect touch events, then collect `ABS_Y` value
-  - compare last `ABS_Y` value with the last one reported in the `evtest` logs below for 3 magic numbers:
-    - 500: scroll down
-    - 3500: scroll up
-    - 1904: button press
-    - None: button press
+  - Watch for `BTN_TOUCH` to pressed, then collect `ABS_Y` value
+  - Look at last `ABS_Y` value  during the `BTN_TOUCH` event below for 3 magic numbers:
+    - `500`: scroll down
+    - `3200`: scroll up
+    - `1904`: button press
+    - `None`: button press
 
 ## Scroll down
 
