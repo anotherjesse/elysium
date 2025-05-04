@@ -5,6 +5,7 @@
 - volume up - start/finish recording audio notes (timestamped)
 - volume down - toggle between full screen and showing it in a small floating window and making everything else clear (eg, sunglasses mode, eg, taking a long walk)
 
+![[Purple TicTok Ring.png]]
 ## Implementation:
 
 Currently I'm testing with mpv + i3 + evdev (eg, a custom python script that talks to other programs via ipc)

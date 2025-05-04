@@ -1,11 +1,24 @@
-## Fan in "pro" version
+![[Khadas Edge 2 Pro.png]]
+## Fan in pro version
 
-- goes off and on non-stop regardless of what is happening... and is small therefore really noisy
+There is a tiny ~1 inch fan and heatsink.  I think it is https://www.khadas.com/product-page/edge2-active-cooling-kit
 
+Mine is constantly turning off and on with the temp alternating between 49 (off) and 50 (on)
+
+#idea Perhaps I can make the computer slower and it won't as often?
+
+```
+$ cat /sys/class/fan/temp
+cpu_temp:49
+Fan trigger temperature: level0:50 level1:60 level2:70
+```
 ## Battery
 
 Requires a very specific USBC PD profile, otherwise it will continuously reboot.
 
+I found the [[Anker Zolo Power Bank]] does a pretty good job.
+
+Most USBc power supplies & battery packs don't work - although this was complicated by the issue with "First setup" only working with HDMI (see next).
 ## First setup
 
 You have to set it up with HDMI - the USB-C DP only works after you are using linux.
