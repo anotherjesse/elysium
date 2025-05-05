@@ -1,3 +1,12 @@
+I love how small this - and that they have a makers version!
+
+Positives
+- small - size of a pack of cards
+- available as pro (enclosure and active cooling) or maker version (no inclusion or cooling)
+- built-in wifi
+- good orientation of ports
+- passive/active cooling (unfortunately loud!)
+
 ![[Khadas Edge 2 Pro.png]]
 ## Fan in pro version
 
@@ -13,6 +22,12 @@ cpu_temp:49
 Fan trigger temperature: level0:50 level1:60 level2:70
 ```
 ## Battery
+
+### Requirements:
+- lasts 8+ hours
+- doesn't reboot [[Single Board Computer]] when battery is plugged in to charge
+- USBC out with PD profile required to fully power the board
+	- #question how do you know which profile is in use?
 
 Requires a very specific USBC PD profile, otherwise it will continuously reboot.
 

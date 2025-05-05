@@ -22,7 +22,7 @@ For initial testing, I'm manually starting mpv with the following command:
 mpv lecture.webm --vo=x11 --input-ipc-server=/tmp/mpv-socket --idle=yes --ontop --no-border --autofit=no
 ```
 
-and in another terminal I run the python script:
+and in another terminal I run the python script [experiment.py](experiment.py)
 
 ```
 python3 experiment.py
@@ -31,4 +31,3 @@ python3 experiment.py
 Then I move the video window to an empty i3 workspace.
 
 Now I can jump around the video, and stop it to record audio notes (to be transcribed/uploaded to Hephaestus)...
-

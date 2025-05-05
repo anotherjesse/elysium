@@ -1,0 +1,3 @@
+ - Raspberry PI family - no usbc DP out
+ - [[Khadas Edge 2]] - constant fan, driver issues with kernel?
+ - 
